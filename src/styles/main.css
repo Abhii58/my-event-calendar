@@ -1,0 +1,149 @@
+/* src/styles/main.css */
+
+/* Import CSS Variables */
+@import './variables.css';
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Button Styles */
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: var(--color-dark);
+}
+
+button:disabled {
+    background-color: var(--color-secondary);
+    cursor: not-allowed;
+}
+
+/* Form Styles */
+input, textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+}
+
+input[type="time"] {
+    width: auto;
+}
+
+/* Calendar Styles */
+.calendar {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    height: fit-content;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-light);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: var(--color-secondary);
+}
+
+.day {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    text-align: center;
+    border: 1px solid var(--color-secondary);
+}
+
+.day.empty {
+    background-color: var(--color-light);
+}
+
+/* Event Styles */
+.event-item {
+    background-color: #8ab4e1;
+    color: #000000;
+    border: 2px solid black;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--border-radius);
+}
+
+/* Add these styles to your existing main.css */
+.app-content {
+    display: flex;
+}
+
+.side-panel {
+    width: 300px; /* Adjust width as needed */
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 3px black;
+    background-color: var(--color-light);
+}
+
+.calendar {
+    flex-grow: 1; /* Allow calendar to take remaining space */
+}
+.event-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.event-actions button {
+    flex-grow: 0;
+    margin: 0 5px;
+}
+.side-panel .export-buttons{
+    margin-bottom: 10px;
+}
+.side-panel select{
+    padding: 8px;
+    background-color: #9ec4f045;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}

@@ -1,0 +1,43 @@
+{
+  "name": "my-event-calendar",
+  "version": "1.0.0",
+  "description": "A dynamic event calendar application built with React.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "calendar",
+    "events"
+  ],
+  "author": "Abhishek",
+  "license": "MIT",
+  "dependencies": {
+    "jwt-decode": "^3.1.2",
+    "npm": "^10.9.2",
+    "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dnd": "^14.0.4",
+    "react-dnd-html5-backend": "^14.0.0",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1",
+    "shadcn": "^1.0.0",
+    "start": "^5.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
