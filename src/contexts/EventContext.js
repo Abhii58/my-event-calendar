@@ -30,10 +30,9 @@ export const EventProvider = ({ children }) => {
             alert('Updated event overlaps with an existing event. Please choose a different time.');
             return;
         }
-
         setEvents(prev => {
             const newEvents = [...prev];
-            newEvents[index] = updatedEvent;
+            newEvents[index] = { ...newEvents[index], ...updatedEvent }; // Update the event at the specified index
             return newEvents;
         });
     };

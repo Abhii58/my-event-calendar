@@ -2,14 +2,12 @@
 import React, { useState, useEffect } from 'react';
 
 // Define event types
-
-    const EVENT_TYPES = [
-        { value: 'work', label: 'Work', color: '#FF6B6B', fontColor: 'black' },
-        { value: 'personal', label: 'Personal', color: '#4ECDC4', fontColor: 'black' },
-        { value: 'health', label: 'Health', color: '#45B7D1', fontColor: 'black' },
-        { value: 'social', label: 'Social', color: '#FDCB6E', fontColor: 'black' },
-        { value: 'other', label: 'Other', color: '#6C5CE7', fontColor: 'black' }
-    
+const EVENT_TYPES = [
+    { value: 'work', label: 'Work', color: '#FF6B6B', fontColor: 'black' },
+    { value: 'personal', label: 'Personal', color: '#4ECDC4', fontColor: 'black' },
+    { value: 'health', label: 'Health', color: '#45B7D1', fontColor: 'black' },
+    { value: 'social', label: 'Social', color: '#FDCB6E', fontColor: 'black' },
+    { value: 'other', label: 'Other', color: '#6C5CE7', fontColor: 'black' }
 ];
 
 const EventForm = ({ onSave, existingEvent }) => {
@@ -35,6 +33,13 @@ const EventForm = ({ onSave, existingEvent }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Validate time inputs
+        if (eventData.startTime >= eventData.endTime) {
+            alert('End time must be later than start time.');
+            return;
+        }
+
         onSave(eventData);
     };
 
